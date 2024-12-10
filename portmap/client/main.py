@@ -1,4 +1,4 @@
-import netmask.client.packets as packets
+import portmap.client.packets as packets
 import threading
 import ipaddress
 import hashlib
@@ -10,7 +10,7 @@ import os
 # Variables
 PACKET_BUFFER = 2048
 
-class NetmaskClient(packets.ProtocolHandler):
+class PortmapClient(packets.ProtocolHandler):
 	class Connection:
 		connectionID = 0
 		downloadedBytes = 0

@@ -1,6 +1,6 @@
 import hashlib
 
-class NetmaskEncryption:
+class PortmapEncryption:
 	def __init__(self, communicationKey):
 		self.communicationKey = communicationKey
 

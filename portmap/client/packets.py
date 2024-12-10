@@ -1,4 +1,4 @@
-from netmask.client.encryption import NetmaskEncryption
+from portmap.client.encryption import PortmapEncryption
 import hashlib
 import socket
 import sys
@@ -14,7 +14,7 @@ class ProtocolHandler():
 		# This encryption key will be used to check the match between client and server in the handshake request
 		self.encryptionKey = hashlib.shake_256(self.communicationKey.encode()).digest(32)
 
-		self.encryption = NetmaskEncryption(self.communicationKey.encode())
+		self.encryption = PortmapEncryption(self.communicationKey.encode())
 
 	def recv(self, length):
 		while True:
