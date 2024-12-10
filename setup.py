@@ -22,8 +22,7 @@ setup(
     ),
 	entry_points={
 		"console_scripts": [
-			"netmaskc = netmask.netmaskc:main",
-			"netmasks = netmask.netmasks:main",
+			"portmap = netmask.netmaskc:main",
 		]
 	},
 	python_requires='>=3.6',

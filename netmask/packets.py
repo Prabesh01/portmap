@@ -1,8 +1,7 @@
-from netmask.utils.encryption import NetmaskEncryption
+from encryption import NetmaskEncryption
 import hashlib
 import socket
 import sys
-import os
 
 class ProtocolHandler():
 	client = None
@@ -29,9 +28,6 @@ class ProtocolHandler():
 				if self.verbose:
 					__import__("traceback").print_exc()
 					print("[HANDLER] Socket got closed unexpectedly, closing connection.")
-
-				if self.client and self.gui != None:
-					self.gui.quitProgram()
 
 				sys.exit()
 
@@ -75,9 +71,6 @@ class ProtocolHandler():
 				__import__("traceback").print_exc()
 				print("[FATAL] Couldn't recieve packet, is the communication key correct?")
 
-			if self.client and self.gui != None:
-				self.gui.quitProgram()
-
 			self.terminateConnection()
 			return
 
@@ -88,9 +81,6 @@ class ProtocolHandler():
 			if self.verbose:
 				__import__("traceback").print_exc()
 				print("[HANDLER] Socket got closed unexpectedly, closing connection.")
-
-			if self.client and self.gui != None:
-				self.gui.quitProgram()
 
 			sys.exit()
 
@@ -109,9 +99,6 @@ class ProtocolHandler():
 			if self.verbose:
 				__import__("traceback").print_exc()
 				print("[FATAL] Couldn't send packet, is the communication key correct?")
-
-			if self.client and self.gui != None:
-				self.gui.quitProgram()
 
 			self.terminateConnection()
 			return
