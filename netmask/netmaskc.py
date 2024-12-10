@@ -1,4 +1,4 @@
-from main import NetmaskClient
+from netmask.client.main import NetmaskClient
 import argparse
 
 def main():
