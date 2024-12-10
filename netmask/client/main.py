@@ -1,4 +1,4 @@
-import packets as packets
+import netmask.client.packets as packets
 import threading
 import ipaddress
 import hashlib

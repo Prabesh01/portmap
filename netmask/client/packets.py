@@ -1,4 +1,4 @@
-from encryption import NetmaskEncryption
+from netmask.client.encryption import NetmaskEncryption
 import hashlib
 import socket
 import sys
