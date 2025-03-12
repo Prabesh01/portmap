@@ -20,3 +20,12 @@ If you get command not found error, download [portmapc.py](https://raw.githubuse
 ```sh
 $ python portmapc.py <port>
 ```
+## Self-hhost:
+
+In server, install netmask and run this python script:
+```
+from netmask.server.main import NetmaskServer
+
+server = NetmaskServer('0', False).start('<server_public_ip>', '-',1024)
+```
+in client, fork this repo -> replace your server ip in portmapc.py -> pip install that repo.
