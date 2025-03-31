@@ -1,6 +1,6 @@
 ### Prerequisites
 
-- python 3.6 or above.
+- python 3.6 or above
 
 ### Installation
 
