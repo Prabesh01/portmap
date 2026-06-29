@@ -22,10 +22,28 @@ $ python portmapc.py <port>
 ```
 ## Self-hhost:
 
-In server, install netmask and run this python script:
+- In server, install netmask and start it. Simply run these bash commands:
 ```
-from netmask.server.main import NetmaskServer
+sudo python3 -m venv /opt/netmask-venv
+sudo /opt/netmask-venv/bin/pip install netmask
 
-server = NetmaskServer('0', False).start('<server_public_ip>', '-',1024)
+sudo cat << 'EOF' | sudo tee /etc/systemd/system/netmask.service
+[Unit]
+Description=Netmask Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/netmask-venv/bin/python3 -c "from netmask.server.main import NetmaskServer; server = NetmaskServer('0', False).start('0.0.0.0', '-', 1024)"
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now netmask
 ```
-in client, fork this repo -> replace your server ip in portmapc.py -> pip install that repo.
+
+- in client, fork this repo -> replace your server ip in portmapc.py -> pip install that repo.
