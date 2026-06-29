@@ -9,7 +9,7 @@ def main():
 
 	server = PortmapClient(args.port)
 		
-	server.connect('91.208.197.189', 1024)
+	server.connect('portmap.freeddns.org', 1024)
 
 if __name__ == "__main__":
 	main()
